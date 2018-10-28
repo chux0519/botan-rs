@@ -11,6 +11,7 @@ macro_rules! call_botan {
     ($x:expr) => {
         let rc = unsafe { $x };
         if rc != 0 {
+            println!("err: {}", rc);
             return Err(Error::from(rc));
         }
     }
